@@ -1,0 +1,15 @@
+[michaelradu]
+	name = Michael
+	email = miihairadu@gmail.com
+[user]
+	name = Michael
+	email = miihairadu@gmail.com
+[core]
+	editor = nvim
+
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true

@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+#Creating ssh-key
+echo "Before running, ensure git is installed, and debian boot-strapping script is in the home directory"
+echo " " 
+sudo apt-get install openssh-server git
+ssh-keygen -t  ecdsa -b 521
+echo " "
+echo "Add this public key, to your GitHub account before continuing"
+echo " "
+cat ~/.ssh/id_ecdsa.pub
+echo " "
+echo "Press [ENTER] key when ready to continue"
+read y
+
+#Pull down dotfiles from Github
+cd ~
+mkdir Repo
+cd Repo
+git clone git@github.com:michaelradu/dot.git
+cd ~
+mkdir Media
+cd Media
+git clone git@github.com:makccr/wallpapers
+cd ~
+
+#Linking up dotfiles & stuff
+cd ~/Repo/.scripts
+chmod +x hack-install
+./hack-install
+# sudo ln -s ~/Repo/fonts/mihai-fonts /usr/share/fonts
+ln -s ~/Repo/dot/.scripts ~/
+ln -s ~/Repo/dot/.config ~/
+ln -s ~/Repo/dot/.Xresources ~/
+ln -s ~/Repo/dot/.gitconfig ~/
+ln -s ~/Repo/dot/.zshenv ~/
+
+# Install applications
+apt=(
+sudo
+fonts-noto
+xorg
+i3
+unzip
+xclip
+ranger
+picom
+firefox-esr
+neovim
+mpv
+nitrogen
+network-manager-gnome
+nvidia-driver
+volumeicon-alsa
+redshift
+qbittorrent
+picom
+lxappearance
+curl
+sxiv
+htop
+lsd
+bat
+tmux
+maim
+xclip
+copyq
+light
+    )
+
+sudo apt-get install ${apt[@]}
+
+echo "Comment wlo1 in /etc/network/interfaces" > wifi.txt
+nvim wifi.txt
+rm wifi.txt
+
+systemctl enable NetworkManager
+
+echo ' '
+echo "Installation complete, restart, or run 'startx' to get started"

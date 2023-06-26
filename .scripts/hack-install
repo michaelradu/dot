@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+RELEASE="3.0.2"
+mkdir /tmp/Hack/$RELEASE
+cd /tmp/Hack/$RELEASE
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
+
+unzip \*.zip
+
+sudo mkdir /usr/local/share/fonts/Hack
+sudo mv *.ttf /usr/local/share/fonts/Hack/.
+
+sudo fc-cache -fv
+
+
