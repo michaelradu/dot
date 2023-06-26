@@ -1,4 +1,4 @@
-<a href="michaelradu.substack.com/">Such wow, Michael</a>
+<a href="https://michaelradu.substack.com/">Such wow, Michael</a>
 
 # Dotfiles
 These are my dot files. I primarily use [Arch](https://www.archlinux.org) but I decided to give [Debian Testing](https://www.debian.org/) a try. I also run Debian or Ubuntu on a few server type systems, so I also try to make sure my dotfiles work there as well.
