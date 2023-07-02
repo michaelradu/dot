@@ -35,6 +35,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Blueman is a pretty good GUI for managing bluetooth
+exec --no-startup-id blueman-manager
+
 # For screenshots install :
 # apt-get install maim xclip copyq
 

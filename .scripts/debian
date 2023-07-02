@@ -66,6 +66,7 @@ maim
 xclip
 copyq
 light
+blueman
     )
 
 sudo apt-get install ${apt[@]}
